@@ -25,6 +25,11 @@
                 <img src="{{asset('/storage/'. $item->preview)}}" class="card-img-top" alt="{{$item['title']}}">
                 <div class="card-body">
                     <h5 class="card-title">{{$item['title']}}</h5>
+                    <p class="card-text">
+                        <strong>
+                            {{$item->type ? $item->type->name : 'Nessun Tipo di progetto selezionato'}}
+                        </strong>
+                    </p>
                     <p class="card-text">{{$item['description']}}</p>
                     <p>{{$item['language']}}</p>
                     <a href="{{ route ( 'dashboard.projects.show', $item->slug )}}" class="btn btn-success">Visualizza</a>

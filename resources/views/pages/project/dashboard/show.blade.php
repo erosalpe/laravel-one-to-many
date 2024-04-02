@@ -17,6 +17,11 @@
             <img src="{{asset('/storage/'. $project->preview)}}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{$project->title}}</h5>
+                <p class="card-text">
+                    <strong>
+                        {{$project->type ? $project->type->name : 'Nessun Tipo di progetto selezionato'}}
+                    </strong>
+                </p>
                 <p class="card-text">{{$project->description}}</p>
                 <p>{{$project->language}}</p>
             </div>

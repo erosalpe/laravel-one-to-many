@@ -47,11 +47,9 @@ class ProjectController extends Controller
         }
 
 
-
-
         $newProject = Project::create($val_data);
 
-        $formData = $request->all();
+        
 
         return redirect()->route('dashboard.projects.index');
     }
