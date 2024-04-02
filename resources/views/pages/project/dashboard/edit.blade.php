@@ -5,7 +5,11 @@
 @vite('resources/js/app.js')
 
 @section('style')
-  
+<style>
+    .edit-img{
+        width:200px;
+    }
+</style>
 @endsection
 
 @section('main')
@@ -68,7 +72,7 @@
         <div class="mb-3">
             <label for="preview" class="form-label">Anteprima</label>
             @if($project->preview)
-                <img src="{{asset('/storage/'. $project->preview)}}" alt="{{$project->title}}">
+                <img class="edit-img" src="{{asset('/storage/'. $project->preview)}}" alt="{{$project->title}}">
             @endif
                 <input type="file" class="form-control @error('preview') is-invalid @enderror" id="preview" name="preview" value="{{old('preview', $project->preview)}}">
             @error('preview')
